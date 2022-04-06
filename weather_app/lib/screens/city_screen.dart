@@ -14,12 +14,10 @@ class _CityScreenState extends State<CityScreen> {
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage('images/city_background.jpg'),
-            fit: BoxFit.cover,
-          ),
-        ),
-        constraints: BoxConstraints.expand(),
+            gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [Colors.blue, Color.fromARGB(255, 2, 31, 54)])),
         child: SafeArea(
           child: Column(
             children: <Widget>[
@@ -30,6 +28,7 @@ class _CityScreenState extends State<CityScreen> {
                   child: Icon(
                     Icons.arrow_back_ios,
                     size: 50.0,
+                    color: Colors.white,
                   ),
                 ),
               ),
@@ -51,7 +50,10 @@ class _CityScreenState extends State<CityScreen> {
                 },
                 child: Text(
                   'Get Weather',
-                  style: kButtonTextStyle,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 30.0,
+                  ),
                 ),
               ),
             ],
